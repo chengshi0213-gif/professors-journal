@@ -7,3 +7,6 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .archive-tools{min-height:100px}
 @media(max-width:600px){.archive-tools{min-height:130px}.filter-group button{min-height:44px}.suggestions button,.suggestions a,.article-end a{min-height:44px;display:flex;align-items:center}footer button{min-height:44px}}
+
+.article-title-block .article-column{font-family:var(--sans);font-size:13px;letter-spacing:.08em;margin-bottom:12px}
+@media(max-width:600px){.article-title-block .article-column{display:none}}

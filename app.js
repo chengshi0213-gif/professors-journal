@@ -1,7 +1,7 @@
 const SITE_BASE='/professors-journal';
 const $=selector=>document.querySelector(selector);
 const escapeHtml=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const categories=['人物','学术','育人','艺文','协会动态','生活'];
+const categories=['本期关注','学人春秋','教授开讲','银龄有为','乐龄生活','协会连线'];
 const topics=['教学','研究','阅读','记忆'];
 let entries=[],currentArticle=null,focusBeforeModal=null;
 function readFilters(){
@@ -39,7 +39,7 @@ function setFilter(kind,value){
  navigate('/'+(query.size?'?'+query.toString():''));
 }
 function card(item,index){
- return `<a class="archive-card" href="${item.url}" data-route style="animation-delay:${Math.min(index*12,100)}ms"><div class="card-image ${item.shape}"><img src="${item.image}" alt="${escapeHtml(item.title)}，平面插画" loading="${index<6?'eager':'lazy'}" decoding="async"></div><div class="card-info"><span class="card-code">(${item.code})</span><span class="card-title">${escapeHtml(item.title)}</span></div></a>`;
+ return `<a class="archive-card" href="${item.url}" data-route style="animation-delay:${Math.min(index*12,100)}ms"><div class="card-image ${item.shape}"><img src="${item.image}" alt="${escapeHtml(item.title)}，平面插画" loading="${index<6?'eager':'lazy'}" decoding="async"></div><div class="card-info"><span class="card-code">(${item.code}) · ${escapeHtml(item.category)}</span><span class="card-title">${escapeHtml(item.title)}</span></div></a>`;
 }
 function renderArchive(){
  const filters=readFilters(),selected=selectedEntries(filters);
@@ -50,7 +50,7 @@ function renderArchive(){
 function renderArticle(item){
  const previous=entries[(item.index-2+entries.length)%entries.length],next=entries[item.index%entries.length];
  const related=[item,...entries.filter(entry=>entry.slug!==item.slug).slice(0,5)];
- $('#main').innerHTML=`<article class="article" aria-label="${escapeHtml(item.title)}"><section class="article-stage"><div class="article-meta"><div><p>图：<br>平面插画</p><p>篇号：<br>(${item.code})</p></div><nav aria-label="前后篇目"><a href="${previous.url}" data-route>上一篇</a><span>/</span><a href="${next.url}" data-route>下一篇</a></nav></div><div class="article-mobile-title"><h2>${escapeHtml(item.title)}</h2><p>试刊 01 · ${escapeHtml(item.category)}</p></div><img class="article-art ${item.shape}" src="${item.image}" alt="${escapeHtml(item.title)}，ImageGen 平面插画"></section><div class="article-title-block"><h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.intro)}</p></div><section class="essay" aria-label="正文"><aside class="essay-info"><p>文字：<br>样刊编辑</p><p>栏目：<br>${escapeHtml(item.category)}</p><p>主题：<br>${item.tags.map(escapeHtml).join('、')}</p></aside><div class="essay-copy">${item.paragraphs.map(paragraph=>`<p>${escapeHtml(paragraph)}</p>`).join('')}<p class="article-note">本文及插画为样刊创作，不对应真实会员采访或已举办活动。正式刊用须以协会审定稿为准。</p><nav class="article-end" aria-label="文章导航"><a href="/professors-journal/" data-route>返回目录</a><a href="${next.url}" data-route>下一篇：${escapeHtml(next.title)}</a></nav></div></section><aside class="article-rail" aria-label="本期目录"><p class="rail-title">本期目录</p>${related.map(entry=>`<a class="rail-card" href="${entry.url}" data-route ${entry.slug===item.slug?'aria-current="page"':''}><img src="${entry.image}" alt="" loading="lazy"><span>(${entry.code})</span><span>${escapeHtml(entry.title)}</span></a>`).join('')}<a href="/professors-journal/" data-route>全部 12 篇</a></aside></article>`;
+ $('#main').innerHTML=`<article class="article" aria-label="${escapeHtml(item.title)}"><section class="article-stage"><div class="article-meta"><div><p>图：<br>平面插画</p><p>篇号：<br>(${item.code})</p></div><nav aria-label="前后篇目"><a href="${previous.url}" data-route>上一篇</a><span>/</span><a href="${next.url}" data-route>下一篇</a></nav></div><div class="article-mobile-title"><h2>${escapeHtml(item.title)}</h2><p>试刊 01 · ${escapeHtml(item.category)}</p></div><img class="article-art ${item.shape}" src="${item.image}" alt="${escapeHtml(item.title)}，ImageGen 平面插画"></section><div class="article-title-block"><p class="article-column">${escapeHtml(item.category)}</p><h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.intro)}</p></div><section class="essay" aria-label="正文"><aside class="essay-info"><p>文字：<br>样刊编辑</p><p>栏目：<br>${escapeHtml(item.category)}</p><p>主题：<br>${item.tags.map(escapeHtml).join('、')}</p></aside><div class="essay-copy">${item.paragraphs.map(paragraph=>`<p>${escapeHtml(paragraph)}</p>`).join('')}<p class="article-note">本文及插画为样刊创作，不对应真实会员采访或已举办活动。正式刊用须以协会审定稿为准。</p><nav class="article-end" aria-label="文章导航"><a href="/professors-journal/" data-route>返回目录</a><a href="${next.url}" data-route>下一篇：${escapeHtml(next.title)}</a></nav></div></section><aside class="article-rail" aria-label="本期目录"><p class="rail-title">本期目录</p>${related.map(entry=>`<a class="rail-card" href="${entry.url}" data-route ${entry.slug===item.slug?'aria-current="page"':''}><img src="${entry.image}" alt="" loading="lazy"><span>(${entry.code}) · ${escapeHtml(entry.category)}</span><span>${escapeHtml(entry.title)}</span></a>`).join('')}<a href="/professors-journal/" data-route>全部 12 篇</a></aside></article>`;
  $('#announcer').textContent=item.title;
 }
 function render(){

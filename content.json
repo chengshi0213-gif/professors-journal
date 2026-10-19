@@ -6,7 +6,7 @@
       "书桌边的",
       "第二课堂"
     ],
-    "category": "人物",
+    "category": "学人春秋",
     "cat": "design",
     "image": "/assets/lecture.webp",
     "intro": "离开固定的课堂，仍然可以通过研究、写作与对话，让知识继续流动。",
@@ -35,7 +35,7 @@
       "把问题",
       "留给年轻人"
     ],
-    "category": "育人",
+    "category": "教授开讲",
     "cat": "fashion",
     "image": "/assets/dialogue.webp",
     "intro": "教学的另一种可能：不急着给出答案，先认真听完一个问题。",
@@ -61,7 +61,7 @@
       "旧讲义里的",
       "新问题"
     ],
-    "category": "学术",
+    "category": "教授开讲",
     "cat": "arts-culture",
     "image": "/assets/writing.webp",
     "intro": "从页边的删改与批注中，重新理解知识进入课堂的过程。",
@@ -88,7 +88,7 @@
       "重读一本",
       "年轻时的书"
     ],
-    "category": "艺文",
+    "category": "乐龄生活",
     "cat": "interiors",
     "image": "/assets/library.webp",
     "intro": "同一本书，在不同的知识背景中，会提出不同的问题。",
@@ -114,7 +114,7 @@
       "围坐一桌",
       "让思想相遇"
     ],
-    "category": "协会动态",
+    "category": "协会连线",
     "cat": "music",
     "image": "/assets/research.webp",
     "intro": "把不同的专业经验放在同一张讨论桌上。",
@@ -141,7 +141,7 @@
       "在城市里",
       "慢慢行走"
     ],
-    "category": "生活",
+    "category": "银龄有为",
     "cat": "travel",
     "image": "/assets/public.webp",
     "intro": "从街道、建筑与地方记忆中，阅读一座城市的变化。",
@@ -167,7 +167,7 @@
       "和新工具",
       "重新认识彼此"
     ],
-    "category": "学术",
+    "category": "本期关注",
     "cat": "arts-culture",
     "image": "/assets/research.webp",
     "intro": "工具可以提供线索，判断仍然需要证据与方法。",
@@ -193,7 +193,7 @@
       "写给后来",
       "站上讲台的人"
     ],
-    "category": "育人",
+    "category": "教授开讲",
     "cat": "fashion",
     "image": "/assets/lecture.webp",
     "intro": "关于课堂、提问，以及求知的诚实。",
@@ -219,7 +219,7 @@
       "一笔一画",
       "安放日常"
     ],
-    "category": "艺文",
+    "category": "乐龄生活",
     "cat": "interiors",
     "image": "/assets/writing.webp",
     "intro": "在文字落到纸面的过程中，重新找到思考的节奏。",
@@ -245,7 +245,7 @@
       "让口述",
       "成为可以保存的记忆"
     ],
-    "category": "人物",
+    "category": "学人春秋",
     "cat": "design",
     "image": "/assets/library.webp",
     "intro": "让具体的时间、地点与物件，成为进入历史的线索。",
@@ -272,7 +272,7 @@
       "把所学",
       "带到更远的地方"
     ],
-    "category": "协会动态",
+    "category": "银龄有为",
     "cat": "music",
     "image": "/assets/public.webp",
     "intro": "一堂面向公众的课，先从听众关心的问题开始。",
@@ -298,7 +298,7 @@
       "在日常中",
       "看见薪火"
     ],
-    "category": "艺文",
+    "category": "本期关注",
     "cat": "interiors",
     "image": "/assets/dialogue.webp",
     "intro": "为学问、经验与公共生活，留下一份可以反复阅读的记录。",
